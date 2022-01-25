@@ -1,0 +1,787 @@
+﻿@*11.9.2021. I update Index.cshtml to this:*@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    @*24.9.2021. I use this website as help to add logo "Conesult" to page: https://stackoverflow.com/questions/10632544/mvc-3-layout-cshtml-add-a-logo-to-the-site
+        and add to body     <img id="img_logo" alt="Logo" src="@Url.Content("Conesult icon 40% oppacity.png")" />
+
+    *@
+
+
+
+    @* I fix "name import does not exist in current context" by changing
+        @import to @@import*@
+
+    @*<style @@import url('https:=url('https: =//fonts.googleapis.com/css2? family=Poppins:wght@600&display =swap');></style>*@
+
+    @*    17.9.2021. <style @@import url('https:=url('https: =//fonts.googleapis.com/css2? family=Poppins:wght@600&display =swap');></style>
+        doesn't work I switch to: @@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+    *@
+
+    <style>
+        @@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+    </style>
+
+
+
+    @* 15.9.2021. Because _Layout.cshtml image doesn't work I add image just here' :
+                    <img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.png" />
+                    I also write besides picture "Community member in Poppins font":
+                    <div class="container">
+        <img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.png" />
+              <div class="bottom-left">Bottom Left</div>
+              <div class="top-left">Top Left</div>
+              <div class="top-right">Top Right</div>
+              <div class="bottom-right">Bottom Right</div>
+              <div class="centered">Centered</div>
+            </div>
+    *@
+    @*<img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.png" />*@
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark" />
+    <title></title>
+    <!--
+      The style block is collapsed on page load to save you some scrolling.
+      Postmark automatically inlines all CSS properties for maximum email client
+      compatibility. You can just update styles here, and Postmark does the rest.
+    -->
+    <style type="text/css" rel="stylesheet" media="all">
+        /* Base ------------------------------ */
+
+        @@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
+
+        body {
+            width: 100% !important;
+            height: 100%;
+            margin: 0;
+            -webkit-text-size-adjust: none;
+        }
+
+        a {
+            color: #3869D4;
+        }
+
+            a img {
+                border: none;
+            }
+
+        td {
+            word-break: break-word;
+        }
+
+        .preheader {
+            display: none !important;
+            visibility: hidden;
+            mso-hide: all;
+            font-size: 1px;
+            line-height: 1px;
+            max-height: 0;
+            max-width: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        /* Type ------------------------------ */
+
+        body,
+        td,
+        th {
+            font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #333333;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333333;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #333333;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        td,
+        th {
+            font-size: 16px;
+        }
+
+        p,
+        ul,
+        ol,
+        blockquote {
+            margin: .4em 0 1.1875em;
+            font-size: 16px;
+            line-height: 1.625;
+        }
+
+            p.sub {
+                font-size: 13px;
+            }
+        /* Utilities ------------------------------ */
+
+        .align-right {
+            text-align: right;
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        .align-center {
+            text-align: center;
+        }
+        /* Buttons ------------------------------ */
+
+        .button {
+            background-color: #3869D4;
+            border-top: 10px solid #3869D4;
+            border-right: 18px solid #3869D4;
+            border-bottom: 10px solid #3869D4;
+            border-left: 18px solid #3869D4;
+            display: inline-block;
+            color: #FFF;
+            text-decoration: none;
+            border-radius: 3px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+            -webkit-text-size-adjust: none;
+            box-sizing: border-box;
+        }
+
+
+            /*        11.9.2021. I add button:hover:
+        */
+            .button:hover {
+                background-color: #93CAED; /* Green */
+                color: #93CAED;
+            }
+
+        .button--green {
+            background-color: #22BC66;
+            border-top: 10px solid #22BC66;
+            border-right: 18px solid #22BC66;
+            border-bottom: 10px solid #22BC66;
+            border-left: 18px solid #22BC66;
+        }
+
+        .button--red {
+            background-color: #FF6136;
+            border-top: 10px solid #FF6136;
+            border-right: 18px solid #FF6136;
+            border-bottom: 10px solid #FF6136;
+            border-left: 18px solid #FF6136;
+        }
+
+        @@media only screen and (max-width: 500px) {
+            .button {
+                width: 100% !important;
+                text-align: center !important;
+            }
+        }
+        /* Attribute list ------------------------------ */
+
+        .attributes {
+            margin: 0 0 21px;
+        }
+
+        .attributes_content {
+            background-color: #F4F4F7;
+            padding: 16px;
+        }
+
+        .attributes_item {
+            padding: 0;
+        }
+        /* Related Items ------------------------------ */
+
+        .related {
+            width: 100%;
+            margin: 0;
+            padding: 25px 0 0 0;
+            -premailer-width: 100%;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+        }
+
+        .related_item {
+            padding: 10px 0;
+            color: #CBCCCF;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        .related_item-title {
+            display: block;
+            margin: .5em 0 0;
+        }
+
+        .related_item-thumb {
+            display: block;
+            padding-bottom: 10px;
+        }
+
+        .related_heading {
+            border-top: 1px solid #CBCCCF;
+            text-align: center;
+            padding: 25px 0 10px;
+        }
+        /* Discount Code ------------------------------ */
+
+        .discount {
+            width: 100%;
+            margin: 0;
+            padding: 24px;
+            -premailer-width: 100%;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+            background-color: #F4F4F7;
+            border: 2px dashed #CBCCCF;
+        }
+
+        .discount_heading {
+            text-align: center;
+        }
+
+        .discount_body {
+            text-align: center;
+            font-size: 15px;
+        }
+        /* Social Icons ------------------------------ */
+
+        .social {
+            width: auto;
+        }
+
+            .social td {
+                padding: 0;
+                width: auto;
+            }
+
+        .social_icon {
+            height: 20px;
+            margin: 0 8px 10px 8px;
+            padding: 0;
+        }
+        /* Data table ------------------------------ */
+
+        .purchase {
+            width: 100%;
+            margin: 0;
+            padding: 35px 0;
+            -premailer-width: 100%;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+        }
+
+        .purchase_content {
+            width: 100%;
+            margin: 0;
+            padding: 25px 0 0 0;
+            -premailer-width: 100%;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+        }
+
+        .purchase_item {
+            padding: 10px 0;
+            color: #51545E;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        .purchase_heading {
+            padding-bottom: 8px;
+            border-bottom: 1px solid #EAEAEC;
+        }
+
+            .purchase_heading p {
+                margin: 0;
+                color: #85878E;
+                font-size: 12px;
+            }
+
+        .purchase_footer {
+            padding-top: 15px;
+            border-top: 1px solid #EAEAEC;
+        }
+
+        .purchase_total {
+            margin: 0;
+            text-align: right;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .purchase_total--label {
+            padding: 0 15px 0 0;
+        }
+
+        body {
+            background-color: #F2F4F6;
+            color: #51545E;
+        }
+
+        p {
+            color: #51545E;
+        }
+
+        .email-wrapper {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            -premailer-width: 100%;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+            background-color: #F2F4F6;
+        }
+
+        .email-content {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            -premailer-width: 100%;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+        }
+        /* Masthead ----------------------- */
+
+        .email-masthead {
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .email-masthead_logo {
+            width: 94px;
+        }
+
+        .email-masthead_name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #A8AAAF;
+            text-decoration: none;
+            text-shadow: 0 1px 0 white;
+        }
+        /* Body ------------------------------ */
+
+        .email-body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            -premailer-width: 100%;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+        }
+
+        .email-body_inner {
+            width: 570px;
+            margin: 0 auto;
+            padding: 0;
+            -premailer-width: 570px;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+            background-color: #FFFFFF;
+        }
+
+        .email-footer {
+            width: 570px;
+            margin: 0 auto;
+            padding: 0;
+            -premailer-width: 570px;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+            text-align: center;
+        }
+
+            .email-footer p {
+                color: #A8AAAF;
+            }
+
+        .body-action {
+            width: 100%;
+            margin: 30px auto;
+            padding: 0;
+            -premailer-width: 100%;
+            -premailer-cellpadding: 0;
+            -premailer-cellspacing: 0;
+            text-align: center;
+        }
+
+        .body-sub {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #EAEAEC;
+        }
+
+        .content-cell {
+            padding: 45px;
+        }
+        /*Media Queries ------------------------------ */
+
+        @@media only screen and (max-width: 600px) {
+            .email-body_inner,
+            .email-footer {
+                width: 100% !important;
+            }
+        }
+
+        @@media (prefers-color-scheme: dark) {
+            body,
+            .email-body,
+            .email-body_inner,
+            .email-content,
+            .email-wrapper,
+            .email-masthead,
+            .email-footer {
+                background-color: #333333 !important;
+                color: #FFF !important;
+            }
+
+            p,
+            ul,
+            ol,
+            blockquote,
+            h1,
+            h2,
+            h3,
+            span,
+            .purchase_item {
+                color: #FFF !important;
+            }
+
+            .attributes_content,
+            .discount {
+                background-color: #222 !important;
+            }
+
+            .email-masthead_name {
+                text-shadow: none !important;
+            }
+        }
+
+        :root {
+            color-scheme: light dark;
+            supported-color-schemes: light dark;
+        }
+    </style>
+    <!--[if mso]>
+      <style type="text/css">
+        .f-fallback  {
+          font-family: Arial, sans-serif;
+        }
+      </style>
+    <![endif]-->
+</head>
+<body>
+
+    @*15.9.2021. Added this to be able to write text beside the conesult(Trying to find a way
+        to write it just to the right of the conesult logo though, not on the picture*@
+
+    @*<img id="img_logo" alt="Logo" src="@Url.Content("Conesult icon 40% oppacity.png")" />*@
+
+    @*24.9.2021. this didn't help: '<img id="img_logo" alt="Logo" src="@Url.Content("Conesult icon 40% oppacity.png")" />*@
+
+    @* 25.6.2021. I use this website: https://www.google.com/search?q=png+file+visual+studio&oq=png+file+visual+studio&aqs=edge..69i57j0i22i30l2.6145j0j1&sourceid=chrome&ie=UTF-8
+                to find a way to add logo but I notice the issue being
+                rather the uncertainty if "png-file" really is a correctly formed "pgn-file"
+                like described in this page: https://stackoverflow.com/questions/2025443/png-files-are-not-showing
+                Now I notice I can't even open the ""Conesult icon 40% oppacity.png" with paint
+                because "there's no support for file format'". I am quite sure that it isn't error
+                in paint program because every other pgn is easy to open.. I try save picture from internet
+                again other way:
+                26.9.2021. I use this website https://devblogs.microsoft.com/aspnet/working-with-svg-files-in-visual-studio-and-visual-web-developer/
+                so I do like this:
+                <body>
+        <object data="Conesult icon 40% oppacity.svg" type="image/svg+xml" width="500" height="500" />
+        </body>
+    *@
+
+    @*<body>*@
+    @*<object data="Conesult icon 40% oppacity.svg" type="image/svg" width="500" height="500" />*@
+    @*</body>*@
+
+    @*26.9.2021. neither
+                 <object data="Conesult icon 40% oppacity.svg" type="image/svg+xml" width="500" height="500" />
+        or
+         <object data="Conesult icon 40% oppacity.svg" type="image/svg" width="500" height="500" />
+         works so I try make with paint a "jpg version" of this svg file because I haven't seen
+         logo image ever to show up in browser - just windows image logo and nothing else.
+         Then I want to use that jpg file and hopefully it shows conesult logo.
+         6.10.2021. I do just that: open Conesult svg file in paint and save it as jpg and
+         add it to project. I get the message that Paint "does not support svg format"
+         so I try convert svg to jpg in https://image.online-convert.com/convert/svg-to-jpg
+        and then add to project like this:
+        <img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.jpg" />
+        it doesn't make any difference, still no image.
+        writing full path doesn't help either C:\Users\symph\source\repos\httpswww.codepile.netpile8DvrLEDGtypeMVC\httpswww.codepile.netpile8DvrLEDGtypeMVC\'
+    *@
+
+    <img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.jpg" />
+
+
+    <div class="container">
+        <img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.png" />
+        <div class="bottom-left">Bottom Left</div>
+        <div class="top-left">Top Left</div>
+        <div class="top-right">Top Right</div>
+        <div class="bottom-right">Bottom Right</div>
+        <div class="centered">Centered</div>
+    </div>
+
+    @* 16.9.2021.I try to use this website as help: https://stackoverflow.com/questions/17219757/how-to-place-text-and-an-image-next-to-each-other-in-html
+                        so I add:
+                        <img src="website_art.png" height= "75" width= "235"/>
+                <h3><font face="Verdana">The Art of Gaming</font></h3>
+
+                I also import poppins: <style>
+        @import url('https://fonts.googleapis.com/css2? family=Poppins:wght@600&display=swap');
+        </style>
+    *@
+
+    @*<style>
+        @import url('https://fonts.googleapis.com/css2? family=Poppins:wght@600&display=swap');
+            </style>*@
+
+    @* 17.9.2021. I run project and get error CS0103: Severity	Code	Description	Project	File
+            Line	Suppression State
+            Error	CS0103	The name 'import' does not exist in the current context
+            httpswww.codepile.netpile8DvrLEDGtypeMVC	C:\Users\symph\source\repos\httpswww.codepile.netpile8DvrLEDGtypeMVC\httpswww.codepile.netpile8DvrLEDGtypeMVC\Views\Home\Index.cshtml	493	Active
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style
+        helps me "style"  element must be inside "head" element so I move it there
+    *@
+
+
+    <img src="Conesult icon 40% oppacity.png" height="75" width="235" />
+    <h3><font name="Poppins">Community member</font></h3>
+    @* 6.10.2021. I try to make if else statement "depends if is related to Community member,
+        Team member, Conesult member, etc
+        (those two words, while design is always the same)." *@
+
+
+    @* 25.1.2022. I create git repository that connects to this solution called: httpswww.codepile.netpile8DvrLEDGtypeMVC
+                and with a description:        
+        "Here is the code, for email as tamplate:
+
+        https://www.codepile.net/pile/8DvrLEDG
+
+        There is issue as all buttons have same "button" effect, but it should only have the first one, "Set up account", where as email support and unsubscribe should only be blue font.
+
+        Both, button and hyperlinks should have hovering effect and pressed effect, here is the button color: #0e3e9b, hovering effect is 60% of that color, and pressed effect is 20% of that color.
+
+        Can you do that?
+
+        Here is also example of Google, if you can add a logo on the top, and beside write "Community member", font name is Poppins?
+        CodePile | Easily Share Piles of Code
+        codepile.net • 1 min read
+        {{ description }}
+        Click or press enter to display email_tamplate_design.jpg in the image previewemail_tamplate_design.jpg
+        Click or press enter to display Conesult-website-png.png in the image previewConesult-website-png.png
+        AUG 3
+        Attila Starkenius sent the following message at 11:31 PM
+        View Attila’s profileAttila Starkenius
+        Attila Starkenius  11:31 PM
+        Okay I try
+        Could we add social media icons at footer and Conesult logo at header of an email template? 🤔 😁
+
+        28.9.2021. Can we create a banner, that will be at the header? Or something else?
+
+        Goal would be to integrate Conesult logo at top left corner of the header,
+        and we will update each email with that element (logo), and than to
+        have on the opposite side a Two words - that we can change across the email,
+        it depends if is related to Community member, Team member, Conesult member, etc
+        (those two words, while design is always the same).
+
+        How we can execute that the easiest?
+
+        Regards, Toni"*@
+
+
+    <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+        <tr>
+            <td align="center">
+                <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr>
+                        </a>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Email Body -->
+        <tr>
+            <td class="email-body" width="570" cellpadding="0" cellspacing="0">
+                <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+                    <!-- Body content -->
+                    <tr>
+                        <td class="content-cell">
+                            <div class="f-fallback">
+                                <h1>
+                                    Hi INPUT_NAME,
+                                </h1>
+                                <p>Thank you for your 'INPUT_POSITION_NAME' position application!</p>
+                                <p><b>Now you are in the (48 hours) revision process and here is the following step to help us finish the revision process:</b></p>
+                                <p>Use the button below to set up (or update) your User profile at our platfrom where your main activities will be held!</p>
+                                <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td align="center">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td align="center">
+                                                        <table border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <!DOCTYPE html>
+                                                                    <html>
+                                                                    <head>
+                                                                        <style>
+
+                                                                            a:link, a:visited {
+                                                                                /*12.9.2021.
+                                                                                                                                                                With help of
+                                                                                                                            https://stackoverflow.com/questions/44263892/how-to-style-a-clicked-button-in-css/44264124 I change
+                                                                                                                                                             background-color: #0e3e9b; to color: purple; to make difference clear
+                                                                                                                                                            14.9.2021. I change the color to "20 % of #0e3e9b color as I have been instructed to"
+                                                                                                                                                                so I find the color of red green and blue that is most and make that
+                                                                                                                                                                most to 20% of it making automatically green and red more because
+                                                                                                                                                                I think that's what is meant  to do. The color becomes: rgb 37, 163, 31
+                                                                                                                                                                and name is #25a31f so I change a:visited background-color to that
+                                                                                                                                                                background-color makes no difference that I can
+                                                                                                                                                                see so I change even color from purple to #25a31f
+                                                                                                                                                            */
+                                                                                /*                                                                                background-color: #0e3e9b;
+                                                                            */ background-color: #25a31f;
+                                                                                /*15.9.2021. I try to add conesult logo at top as instructed:
+                                                                                                                                                                I right click project add - existing item - Conesult icon 40% oppacity.svg
+                                                                                                                                                                then I use this website as help to add a logo to this projects Index.cshtml file:
+                                                                                                                                                                https://stackoverflow.com/questions/10632544/mvc-3-layout-cshtml-add-a-logo-to-the-site
+                                                                                                                                                                so in _Layout.cshtml file I add: <img id="img_logo" alt="Logo" src="Url.Content("~/Conesult icon 40% oppacity.svg")" />
+
+                                                                                                                                                            */
+
+                                                                                border-radius: 25px;
+                                                                                /*color: white;*/
+                                                                                /*color: purple;*/
+                                                                                color: #25a31f;
+                                                                                padding: 14px 25px;
+                                                                                text-align: center;
+                                                                                text-decoration: none;
+                                                                                display: inline-block;
+                                                                            }
+
+                                                                            /*                                                                            11.9.2021. I notice there is already a:hover even though I made own button:hover
+                                                                            */
+                                                                            a:hover, a:active {
+                                                                                /*background-color: #1251CA; so I change to background-color: #93CAED making that 60% blue of that #0e3e9b color as wanted;
+
+                                                                            */
+                                                                                /*                                                                                background-color: #93CAED;
+                                                                            */ /*12.9.2021. I change to background-color:orange; to make it clearer difference*/
+                                                                                background-color: #FF715D;
+                                                                                /*                                                                                background-color: orange;
+                                                                            */ /*I change hovering effect
+                                                                                                                                                                to correct 	background-color: #FF715D;
+                                                                                                                                                            */
+                                                                            }
+
+                                                                            /*12.9.2021. I open solution, get dialog
+                                                                                                                                                            "do you want to normalize
+                                                                                                                                                            line endings" and I click yes
+                                                                                                                                                        */
+
+                                                                        </style>
+                                                                    </head>
+                                                                    @*<body>*@
+                                                                    <a href="https://www.conesult.org" target="_blank">Set up account</a>
+                                                                    @*</body>*@
+                                                                </html>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p><b>Once we go through your application (within 48 hours), you can expect another email with the onboarding steps!</b></p><p>
+                            </p>
+                            <p>Alternatively, feel free to <a href="mailto:info@conesult.org">contact our community success team</a> anytime.</p>
+                            <p>Once again! Nice to see you here and we are looking forward to developing with you!</p>
+                            <p>
+                                Sincerely,
+                                <br />Conesult Team
+                            </p>
+
+                            <center><font size="2"><a href="{{{ pm:unsubscribe }}}">Unsubscribe</a></font></center>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table class="email-footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                    <td class="content-cell" align="center">
+                        <p class="f-fallback sub align-center">Copyrights © Conesult 2021</p>
+                        <p class="f-fallback sub align-center">
+                            Conesult
+                            <br />www.conesult.org
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+        </td>
+      </tr>
+    </table>
+</body>
+</html>
+
+@*11.9.2021. I get this result: httpswww.codepile.netpile8DvrLEDGtypeMVC
+Home
+Privacy
+Hi INPUT_NAME,
+Thank you for your 'INPUT_POSITION_NAME' position application!
+
+Now you are in the (48 hours) revision process and here is the following step to help us finish the revision process:
+
+Use the button below to set up (or update) your User profile at our platfrom where your main activities will be held!
+
+Set up account
+Once we go through your application (within 48 hours), you can expect another email with the onboarding steps!
+
+Alternatively, feel free to contact our community success team anytime.
+
+Once again! Nice to see you here and we are looking forward to developing with you!
+
+Sincerely,
+Conesult Team
+
+Unsubscribe
+Copyrights © Conesult 2021
+
+Conesult
+www.conesult.org
+
+© 2021 - httpswww.codepile.netpile8DvrLEDGtypeMVC - Privacy*@

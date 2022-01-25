@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - httpswww.codepile.netpile8DvrLEDGtypeMVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+
+        @*15.9.2021. I add Conesult logo to every page by adding this to _Layout.cshtml file:
+        <img id="img_logo" alt="Logo" src="@Url.Content("~/Conesult icon 40% oppacity.svg")" />
+        Logo looks like this: "Empty picture" followed by text: Logo
+            I try to fix problem by doing exactly like website
+            https://stackoverflow.com/questions/10632544/mvc-3-layout-cshtml-add-a-logo-to-the-site
+            which means saving logo not as svg file as I had done before, but as a png file:
+            Conesult icon 40% oppacity.png
+        *@
+
+
+        @*<img id="img_logo" alt="Logo" src="@Url.Content("~/Conesult icon 40% oppacity.svg")" />*@
+
+        @*<img id="img_logo" alt="Logo" src="@Url.Content("~/Conesult icon 40% oppacity.png")" />*@
+
+        @*15.9.2021. It doesn't help so I use website https://docs.microsoft.com/en-us/aspnet/web-pages/overview/ui-layouts-and-themes/9-working-with-images
+                    as help and change to:
+                            <img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.png" />
+        '*@
+        <img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.png" />
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">httpswww.codepile.netpile8DvrLEDGtypeMVC</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - httpswww.codepile.netpile8DvrLEDGtypeMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

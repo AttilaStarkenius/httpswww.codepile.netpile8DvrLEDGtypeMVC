@@ -1,0 +1,34 @@
+Here is the code, for email as tamplate:
+
+https://www.codepile.net/pile/8DvrLEDG
+
+There is issue as all buttons have same "button" effect, but it should only have the first one, "Set up account", where as email support and unsubscribe should only be blue font. 
+
+Both, button and hyperlinks should have hovering effect and pressed effect, here is the button color: #0e3e9b, hovering effect is 60% of that color, and pressed effect is 20% of that color.
+
+Can you do that?
+
+Here is also example of Google, if you can add a logo on the top, and beside write "Community member", font name is Poppins?
+CodePile | Easily Share Piles of Code
+codepile.net • 1 min read
+{{ description }}
+Click or press enter to display email_tamplate_design.jpg in the image previewemail_tamplate_design.jpg
+Click or press enter to display Conesult-website-png.png in the image previewConesult-website-png.png
+AUG 3
+Attila Starkenius sent the following message at 11:31 PM
+View Attila’s profileAttila Starkenius
+Attila Starkenius  11:31 PM
+Okay I try
+Could we add social media icons at footer and Conesult logo at header of an email template? 🤔 😁 
+
+28.9.2021. Can we create a banner, that will be at the header? Or something else?
+
+Goal would be to integrate Conesult logo at top left corner of the header, 
+and we will update each email with that element (logo), and than to 
+have on the opposite side a Two words - that we can change across the email, 
+it depends if is related to Community member, Team member, Conesult member, etc 
+(those two words, while design is always the same).
+
+How we can execute that the easiest?
+
+Regards, Toni
