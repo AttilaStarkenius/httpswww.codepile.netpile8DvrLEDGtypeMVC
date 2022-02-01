@@ -481,6 +481,17 @@
             color-scheme: light dark;
             supported-color-schemes: light dark;
         }
+
+        .conesultImage {
+            
+            display: block; 
+            margin: 0px; 
+            height: 44px; 
+            width: 44px; 
+            border-radius: 100px;
+
+        }
+
     </style>
     <!--[if mso]>
       <style type="text/css">
@@ -534,6 +545,54 @@
         it doesn't make any difference, still no image.
         writing full path doesn't help either C:\Users\symph\source\repos\httpswww.codepile.netpile8DvrLEDGtypeMVC\httpswww.codepile.netpile8DvrLEDGtypeMVC\'
     *@
+
+    @* 1.2.2022. Conesult Logo just shows "image not found image" so I try to add Conesult
+                logo just directly from https://conesult.com/: <img alt=""
+                src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636320648841x422698385398056600%2F1%25281%2529.png?w=64&amp;h=64&amp;auto=compress&amp;fit=crop&amp;dpr=1.5"
+                style="display: block; margin: 0px; width: 100%; height: 100%; border-radius: 100px;">
+                it works but the image  is as bigger than the viewport. I change it to
+                height: 44px; width: 44px; just like on the website https://conesult.com/:     <img alt=""
+                src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636320648841x422698385398056600%2F1%25281%2529.png?w=64&amp;h=64&amp;auto=compress&amp;fit=crop&amp;dpr=1.5"
+                style="display: block; margin: 0px; height: 44px; width: 44px; border-radius: 100px;" />
+                now logo works only in one place so to apply this layout to every Conesult image on
+                page, I add "Conesult image class" called conesultImage with
+                all these properties: <img class: conesultImage
+                alt="Conesult logo couldn't be displayed'"
+                src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636320648841x422698385398056600%2F1%25281%2529.png?w=64&amp;h=64&amp;auto=compress&amp;fit=crop&amp;dpr=1.5">
+                and the css like this:
+        .conesultImage {
+
+                    display: block;
+                    margin: 0px;
+                    height: 44px;
+                    width: 44px;
+                    border-radius: 100px;
+
+                }
+
+        ´The missing part is the "src property" which I have to add manually but
+         the styling is in .conesultImage {
+
+                    display: block;
+                    margin: 0px;
+                    height: 44px;
+                    width: 44px;
+                    border-radius: 100px;
+
+                }
+
+        I commit all and push git changes "Fixing styling of Conesult logo images 1.2.2022."
+
+    *@
+
+    @*<img alt=""
+        src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636320648841x422698385398056600%2F1%25281%2529.png?w=64&amp;h=64&amp;auto=compress&amp;fit=crop&amp;dpr=1.5"
+        style="display: block; margin: 0px; width: 100%; height: 100%; border-radius: 100px;" />*@
+
+    <img alt=""
+         src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636320648841x422698385398056600%2F1%25281%2529.png?w=64&amp;h=64&amp;auto=compress&amp;fit=crop&amp;dpr=1.5"
+         style="display: block; margin: 0px; height: 44px; width: 44px; border-radius: 100px;" />
+
 
     <img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.jpg" />
 
@@ -617,9 +676,11 @@
 
     @*  *@
 
-    @* I commit and push with message "Updated about 
-        description section in 
+    @*25.1.2022. I commit and push with message "Updated about
+        description section in
         https://github.com/AttilaStarkenius/httpswww.codepile.netpile8DvrLEDGtypeMVC 25.1.2022. *@
+
+
 
 
     <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
