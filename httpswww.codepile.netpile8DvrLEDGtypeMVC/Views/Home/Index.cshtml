@@ -1,4 +1,41 @@
-﻿@*11.9.2021. I update Index.cshtml to this:*@
+﻿@* 7.2.2022. I get the instructions about what
+                    is left to solve: Could we find a way how to add a logo on the header at our HTML email layout? 🤔 😁
+
+            I guess that is the biggest task.. 😁 Still ongoing..
+
+            Have learned there is few ways, the main question is where we will upload the logo image, one place is Amazon, but trying to find some free place, but still stable to fetch image from.
+
+            What do you think?
+
+            I use this website as a tutorial: https://responsivehtmlemail.com/responsive-html-email-template/
+            so I add: <tr>
+      <td>
+         <table width="100%">
+          <tr>
+            <td style="padding: 10px; text-align: center;">
+                    <a href=”#”><img src="C:\Users\symph\source\repos\httpswww.codepile.netpile8DvrLEDGtypeMVC\httpswww.codepile.netpile8DvrLEDGtypeMVC\Conesult icon 40% oppacity.png" width="180" alt="" /></a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    I also add it on top of _Layout.cshtml page so that the image will be on every page.
+*@
+
+<tr>
+    <td>
+        <table width="100%">
+            <tr>
+                <td style="padding: 10px; text-align: center;">
+                    <a href=”#”><img src="C:\Users\symph\source\repos\httpswww.codepile.netpile8DvrLEDGtypeMVC\httpswww.codepile.netpile8DvrLEDGtypeMVC\Conesult icon 40% oppacity.png" width="180" alt="" /></a>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+
+@*11.9.2021. I update Index.cshtml to this:*@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -483,15 +520,12 @@
         }
 
         .conesultImage {
-            
-            display: block; 
-            margin: 0px; 
-            height: 44px; 
-            width: 44px; 
+            display: block;
+            margin: 0px;
+            height: 44px;
+            width: 44px;
             border-radius: 100px;
-
         }
-
     </style>
     <!--[if mso]>
       <style type="text/css">
@@ -595,12 +629,14 @@
 
     @* 1.2.2022. There is a lot of not showing Conesult logo images
              "appearing from nowhere" because they are not in Index.cshtml, but in _Layout.cshtml file.
-             I fix this issue by changing in _Layout.cshtml from: <img id="img_logo" alt="Logo" 
+             I fix this issue by changing in _Layout.cshtml from: <img id="img_logo" alt="Logo"
         src="Conesult icon 40% oppacity.png" />
-        to:         <img id="img_logo" alt="Logo" 
+        to:         <img id="img_logo" alt="Logo"
         src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636320648841x422698385398056600%2F1%25281%2529.png?w=64&amp;h=64&amp;auto=compress&amp;fit=crop&amp;dpr=1.5" />
 
     *@
+
+
 
 
     <img id="img_logo" alt="Logo" src="Conesult icon 40% oppacity.jpg" />
@@ -837,29 +873,29 @@
 </html>
 
 @*11.9.2021. I get this result: httpswww.codepile.netpile8DvrLEDGtypeMVC
-Home
-Privacy
-Hi INPUT_NAME,
-Thank you for your 'INPUT_POSITION_NAME' position application!
+    Home
+    Privacy
+    Hi INPUT_NAME,
+    Thank you for your 'INPUT_POSITION_NAME' position application!
 
-Now you are in the (48 hours) revision process and here is the following step to help us finish the revision process:
+    Now you are in the (48 hours) revision process and here is the following step to help us finish the revision process:
 
-Use the button below to set up (or update) your User profile at our platfrom where your main activities will be held!
+    Use the button below to set up (or update) your User profile at our platfrom where your main activities will be held!
 
-Set up account
-Once we go through your application (within 48 hours), you can expect another email with the onboarding steps!
+    Set up account
+    Once we go through your application (within 48 hours), you can expect another email with the onboarding steps!
 
-Alternatively, feel free to contact our community success team anytime.
+    Alternatively, feel free to contact our community success team anytime.
 
-Once again! Nice to see you here and we are looking forward to developing with you!
+    Once again! Nice to see you here and we are looking forward to developing with you!
 
-Sincerely,
-Conesult Team
+    Sincerely,
+    Conesult Team
 
-Unsubscribe
-Copyrights © Conesult 2021
+    Unsubscribe
+    Copyrights © Conesult 2021
 
-Conesult
-www.conesult.org
+    Conesult
+    www.conesult.org
 
-© 2021 - httpswww.codepile.netpile8DvrLEDGtypeMVC - Privacy*@
+    © 2021 - httpswww.codepile.netpile8DvrLEDGtypeMVC - Privacy*@

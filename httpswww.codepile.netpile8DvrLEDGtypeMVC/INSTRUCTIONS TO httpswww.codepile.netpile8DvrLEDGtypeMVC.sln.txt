@@ -32,3 +32,11 @@ it depends if is related to Community member, Team member, Conesult member, etc
 How we can execute that the easiest?
 
 Regards, Toni
+
+Could we find a way how to add a logo on the header at our HTML email layout? 🤔 😁
+
+I guess that is the biggest task.. 😁 Still ongoing..
+
+Have learned there is few ways, the main question is where we will upload the logo image, one place is Amazon, but trying to find some free place, but still stable to fetch image from.
+
+What do you think?

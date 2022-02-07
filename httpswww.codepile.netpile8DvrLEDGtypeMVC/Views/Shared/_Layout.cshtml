@@ -7,8 +7,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
+
+
 </head>
 <body>
+
+    @* 7.2.2022. I add the Conesult image with help of this webpage: https://responsivehtmlemail.com/responsive-html-email-template/
+                <tr>
+            <td>
+                <table width="100%">
+                    <tr>
+                        <td style="padding: 10px; text-align: center;">
+                            <a href=”#”><img src="C:\Users\symph\source\repos\httpswww.codepile.netpile8DvrLEDGtypeMVC\httpswww.codepile.netpile8DvrLEDGtypeMVC\Conesult icon 40% oppacity.png" width="180" alt="" /></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        Pgn file doesn't show up so I try jpg file instead:  <a href=”#”><img src="C:\Users\symph\source\repos\httpswww.codepile.netpile8DvrLEDGtypeMVC\httpswww.codepile.netpile8DvrLEDGtypeMVC\Conesult icon 40% oppacity.jpg" width="180" alt="" /></a>
+        It doesn't help so I check this website for help: https://sebhastian.com/html-image-not-showing/
+        I change from:<td style="padding: 10px; text-align: center;">
+                            <a href=”#”><img src="C:\Users\symph\source\repos\httpswww.codepile.netpile8DvrLEDGtypeMVC\httpswww.codepile.netpile8DvrLEDGtypeMVC\Conesult icon 40% oppacity.jpg" width="180" alt="" /></a>
+                        </td>
+        to: <td style="padding: 10px; text-align: center;">
+                            <a href=”#”><img src="Conesult icon 40% oppacity.jpg" width="180" alt="" /></a>
+                        </td>
+        the picture still doesn't show I commit and push with message:
+        "Trying to fix with the logo
+        not showing issue with https://responsivehtmlemail.com/responsive-html-email-template/ 7.2.2022. "
+    *@
+
+    <table width="100%">
+        <tr>
+            <td>
+                <table width="100%">
+                    <tr>
+                        <td style="padding: 10px; text-align: center;">
+                            <a href=”#”><img src="Conesult icon 40% oppacity.jpg" width="180" alt="" /></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
     <header>
 
         @*15.9.2021. I add Conesult logo to every page by adding this to _Layout.cshtml file:
