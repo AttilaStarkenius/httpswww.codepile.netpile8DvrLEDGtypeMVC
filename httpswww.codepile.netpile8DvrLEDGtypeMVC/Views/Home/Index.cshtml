@@ -746,6 +746,14 @@
                     <tr>
                         <td class="content-cell">
                             <div class="f-fallback">
+                                @* 10.3.2022. I add:         <img id="img_logo" alt="Logo" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636320648841x422698385398056600%2F1%25281%2529.png?w=64&amp;h=64&amp;auto=compress&amp;fit=crop&amp;dpr=1.5" />
+                               it works so I commit and push with
+                                    message: "fixed conesult logo on top
+                                    of email template 10.3.2022."
+                                    *@
+
+                                <img id="img_logo" alt="Logo" src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636320648841x422698385398056600%2F1%25281%2529.png?w=64&amp;h=64&amp;auto=compress&amp;fit=crop&amp;dpr=1.5" />
+
                                 <h1>
                                     Hi INPUT_NAME,
                                 </h1>
@@ -768,26 +776,31 @@
 
                                                                             a:link, a:visited {
                                                                                 /*12.9.2021.
-                                                                                                                                                                With help of
-                                                                                                                            https://stackoverflow.com/questions/44263892/how-to-style-a-clicked-button-in-css/44264124 I change
-                                                                                                                                                             background-color: #0e3e9b; to color: purple; to make difference clear
-                                                                                                                                                            14.9.2021. I change the color to "20 % of #0e3e9b color as I have been instructed to"
-                                                                                                                                                                so I find the color of red green and blue that is most and make that
-                                                                                                                                                                most to 20% of it making automatically green and red more because
-                                                                                                                                                                I think that's what is meant  to do. The color becomes: rgb 37, 163, 31
-                                                                                                                                                                and name is #25a31f so I change a:visited background-color to that
-                                                                                                                                                                background-color makes no difference that I can
-                                                                                                                                                                see so I change even color from purple to #25a31f
-                                                                                                                                                            */
+                                                                                                                                                                                                                                            With help of
+                                                                                                                                                                                                        https://stackoverflow.com/questions/44263892/how-to-style-a-clicked-button-in-css/44264124 I change
+                                                                                                                                                                                                                                         background-color: #0e3e9b; to color: purple; to make difference clear
+                                                                                                                                                                                                                                        14.9.2021. I change the color to "20 % of #0e3e9b color as I have been instructed to"
+                                                                                                                                                                                                                                            so I find the color of red green and blue that is most and make that
+                                                                                                                                                                                                                                            most to 20% of it making automatically green and red more because
+                                                                                                                                                                                                                                            I think that's what is meant  to do. The color becomes: rgb 37, 163, 31
+                                                                                                                                                                                                                                            and name is #25a31f so I change a:visited background-color to that
+                                                                                                                                                                                                                                            background-color makes no difference that I can
+                                                                                                                                                                                                                                            see so I change even color from purple to #25a31f
+                                                                                                                                                                                                                                        */
                                                                                 /*                                                                                background-color: #0e3e9b;
-                                                                            */ background-color: #25a31f;
-                                                                                /*15.9.2021. I try to add conesult logo at top as instructed:
-                                                                                                                                                                I right click project add - existing item - Conesult icon 40% oppacity.svg
-                                                                                                                                                                then I use this website as help to add a logo to this projects Index.cshtml file:
-                                                                                                                                                                https://stackoverflow.com/questions/10632544/mvc-3-layout-cshtml-add-a-logo-to-the-site
-                                                                                                                                                                so in _Layout.cshtml file I add: <img id="img_logo" alt="Logo" src="Url.Content("~/Conesult icon 40% oppacity.svg")" />
+                                                                                                                                                        */
+                                                                                /*                                                                                I change background-color: #25a31f; to background-color: lightgrey;
 
-                                                                                                                                                            */
+                                                                            */
+
+                                                                                background-color: lightgrey;
+                                                                                /*15.9.2021. I try to add conesult logo at top as instructed:
+                                                                                                                                                                                                                                            I right click project add - existing item - Conesult icon 40% oppacity.svg
+                                                                                                                                                                                                                                            then I use this website as help to add a logo to this projects Index.cshtml file:
+                                                                                                                                                                                                                                            https://stackoverflow.com/questions/10632544/mvc-3-layout-cshtml-add-a-logo-to-the-site
+                                                                                                                                                                                                                                            so in _Layout.cshtml file I add: <img id="img_logo" alt="Logo" src="Url.Content("~/Conesult icon 40% oppacity.svg")" />
+
+                                                                                                                                                                                                                                        */
 
                                                                                 border-radius: 25px;
                                                                                 /*color: white;*/
@@ -800,24 +813,24 @@
                                                                             }
 
                                                                             /*                                                                            11.9.2021. I notice there is already a:hover even though I made own button:hover
-                                                                            */
+                                                                                                                                                        */
                                                                             a:hover, a:active {
                                                                                 /*background-color: #1251CA; so I change to background-color: #93CAED making that 60% blue of that #0e3e9b color as wanted;
 
-                                                                            */
+                                                                                                                                                        */
                                                                                 /*                                                                                background-color: #93CAED;
-                                                                            */ /*12.9.2021. I change to background-color:orange; to make it clearer difference*/
+                                                                                                                                                        */ /*12.9.2021. I change to background-color:orange; to make it clearer difference*/
                                                                                 background-color: #FF715D;
                                                                                 /*                                                                                background-color: orange;
-                                                                            */ /*I change hovering effect
-                                                                                                                                                                to correct 	background-color: #FF715D;
-                                                                                                                                                            */
+                                                                                                                                                        */ /*I change hovering effect
+                                                                                                                                                                                                                                            to correct 	background-color: #FF715D;
+                                                                                                                                                                                                                                        */
                                                                             }
 
                                                                             /*12.9.2021. I open solution, get dialog
-                                                                                                                                                            "do you want to normalize
-                                                                                                                                                            line endings" and I click yes
-                                                                                                                                                        */
+                                                                                                                                                                                                                                        "do you want to normalize
+                                                                                                                                                                                                                                        line endings" and I click yes
+                                                                                                                                                                                                                                    */
 
                                                                         </style>
                                                                     </head>
@@ -844,7 +857,7 @@
                             </p>
 
                             <center><font size="2"><a href="{{{ pm:unsubscribe }}}">Unsubscribe</a></font></center>
-                        </div>
+                            </div>
                     </td>
                 </tr>
             </table>
